@@ -20,6 +20,7 @@ namespace _2324_2Y_2B_IntegProg_LoginSample
     public partial class Window1 : Window
     {
         DataClassDataContext _dbConn = null;
+        string _currentUser = "";
 
         public Window1()
         {
@@ -30,12 +31,15 @@ namespace _2324_2Y_2B_IntegProg_LoginSample
         {
             InitializeComponent();
 
+            _currentUser = userName;
+
             _dbConn = new DataClassDataContext(
                 Properties.Settings.Default._2324_2B_LoginSampleConnectionString);
 
             IQueryable<tblLogin> selectResults = from s in _dbConn.tblLogins
-                                                 where s.LoginID == userName
+                                                 where s.LoginID == _currentUser
                                                  select s;
+
             if (selectResults.Count() == 1)
             {
                 foreach (tblLogin s in selectResults)

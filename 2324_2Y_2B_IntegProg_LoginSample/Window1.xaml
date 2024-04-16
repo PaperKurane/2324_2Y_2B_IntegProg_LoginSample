@@ -8,6 +8,10 @@
         Title="Window1" Height="450" Width="800" Closing="Window_Closing">
     <Grid>
         <Label x:Name="lbWelcome" Content="Label" FontSize="30" FontFamily="Segoe UI SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="69,39,0,0" VerticalAlignment="Top" Width="662"/>
+        <Label x:Name="lbHeading1" Content="User Name Changer" FontSize="30" FontFamily="Segoe UI SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,116,0,0" VerticalAlignment="Top" Width="662"/>
+        <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="298" Height="30"/>
+
+
 
     </Grid>
 </Window>
