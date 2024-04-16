@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800" Closing="Window_Closing">
     <Grid>
-        
+        <Label x:Name="lbWelcome" Content="Label" FontSize="30" FontFamily="Segoe UI SemiBold" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="69,39,0,0" VerticalAlignment="Top" Width="662"/>
+
     </Grid>
 </Window>

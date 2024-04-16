@@ -19,9 +19,36 @@ namespace _2324_2Y_2B_IntegProg_LoginSample
     /// </summary>
     public partial class Window1 : Window
     {
+        DataClassDataContext _dbConn = null;
+
         public Window1()
         {
             InitializeComponent();
+        }
+
+        public Window1(string userName)
+        {
+            InitializeComponent();
+
+            _dbConn = new DataClassDataContext(
+                Properties.Settings.Default._2324_2B_LoginSampleConnectionString);
+
+            IQueryable<tblLogin> selectResults = from s in _dbConn.tblLogins
+                                                 where s.LoginID == userName
+                                                 select s;
+            if (selectResults.Count() == 1)
+            {
+                foreach (tblLogin s in selectResults)
+                {
+                    lbWelcome.Content = $"Welcome {s.LoginName}!";
+
+                    tblLogin tlogin = new tblLogin();
+                    tlogin.LoginID = "";
+
+                    _dbConn.tblLogins.InsertOnSubmit(tlogin);
+                    break;
+                }
+            }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

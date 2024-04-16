@@ -71,7 +71,7 @@ namespace _2324_2Y_2B_IntegProg_LoginSample
 
             if(flag)
             {
-                Window1 w = new Window1();
+                Window1 w = new Window1(txtUser.Text);
                 w.Show();
                 this.Close();
             }
